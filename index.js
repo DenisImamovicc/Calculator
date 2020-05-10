@@ -40,6 +40,8 @@ function operate(a,b,operator,sum){
     }
 }
 
+
+
 addition(5,5);
 subtraction(5,5);
 multiplication(5,5);
