@@ -10,30 +10,31 @@
 </head>
 
 <body>
-    <div class="calculator">
-        <div class="screenDisplay"><h2 class="textDisplay"></h2></div>
-        <div class="addition"><button>addition</button></div>
-        <div class="subtract"><button>subtract</button></div>
-        <div class="multiply"><button>multiply</button></div>
-        <div class="division"><button>division</button></div>
-        <div class="operate"><button>=</button></div>
-        
-        <div class="numbers">
-            <div class="zero"><button>0</button></div>
-            <div class="one"><button>1</button></div>
-            <div class="two"><button>2</button></div>
-            <div class="three"><button>3</button></div>
-            <div class="four"><button>4</button></div>
-            <div class="five"><button>5</button></div>
-            <div class="six"><button>6</button></div>
-            <div class="seven"><button>7</button></div>
-            <div class="eight"><button>8</button></div>
-            <div class="nine"><button>9</button></div>
-        </div>
-
-        <div class="clear"><button>clear</button></div>
+    <div class="calculator-grid">
+      <div class="output">
+        <!-- <div data-previous-operand class="previous-operand"></div> -->
+        <div data-current-operand class="current-operand"></div>
+      </div>
+        <button data-all-clear class="span-two">AC</button>
+        <button data-delete>DEL</button>
+        <button data-operation>/</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>*</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>-</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-equals class="span-two">=</button>
     </div>
-</body>
+  </body>
 
 <script type="text/javascript" src="index.js"></script>
 

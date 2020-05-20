@@ -1,3 +1,5 @@
+  
+  
     function addition(a,b){
     sum=a+b;
     console.log(sum);
@@ -18,46 +20,44 @@
     console.log(sum);
     }
 
-    function operate(a,b,operator){
-        if(operator=="+"){
-        sum=addition(a,b);
+    function operate(numberone,numbertwo,operators){
+        if(operators=="+"){
+        sum=addition(numberone,numbertwo);
 
         }
-        else if(operator=="-"){
-        sum=subtraction(a,b);
+        else if(operators=="-"){
+        sum=subtraction(numberone,numbertwo);
 
         }
-        else if(operator=="*"){
-        sum=multiplication(a,b);
+        else if(operators=="*"){
+        sum=multiplication(numberone,numbertwo);
 
         }
-        else if(operator=="/"){
-        sum=division(a,b);
+        else if(operators=="/"){
+        sum=division(numberone,numbertwo);
         }
-}
+
+    }
 // addition(5,5);
 // subtraction(5,5);
 // multiplication(5,5);
 // division(5,5);
-operate(5,5,"/");
+// operate(5,5,"/");
 
-//Where all buttons should be connected to
-let calculatorButtons = {
-numbers:[0,1,2,3,4,5,6,7,8,9],
-operators:["+","-","*","/"],
-result:"="
-};
-//Where all of the selected button value goes to now[]
-let currentDisplay = {now:[]};
 
-console.log(calculatorButtons)
+const buttonNumbers= document.querySelectorAll("[data-number]")    
+const buttonOperations= document.querySelectorAll("[data-operation]")    
+const buttonAllClear= document.querySelector("[data-all-clear]")    
+const buttonDelete= document.querySelector("[data-delete]")
+const buttonEqual= document.querySelector("[data-equals]")    
+const screenDisplay= document.querySelector("[data-current-operand]")  
+
 
 function inputDisplay(input){
-let screenDisplay=document.querySelector(".screenDisplay")
-let textDisplay=document.createElement("h2")
 
     if(input=="="){
         console.log(input+" "+"pressed")
+        // textDisplay.textContent=operate(5,5,"/");
         return;
     }
     else{
@@ -65,92 +65,44 @@ let textDisplay=document.createElement("h2")
         screenDisplay.appendChild(textDisplay)
         textDisplay.textContent=input
         console.log(input+" "+"pressed")
-        console.log(input)
         console.log(textDisplay)
-
+        currentDisplay++
+        console.log(currentDisplay)
 
     }
 }
+ 
+buttonNumbers.forEach(button => {
+    button.addEventListener("click",() => {
+        console.log(button)
+        screenDisplay.textContent=button.innerHTML
+    })
+})
 
-let zero=document.querySelector(".zero");
-zero.addEventListener("click",function(){
-    inputDisplay(0)
-});
-
-let one=document.querySelector(".one");
-one.addEventListener("click",function(){
-    inputDisplay(1)
-});
-let two=document.querySelector(".two");
-two.addEventListener("click",function(){
-    inputDisplay(2)
-});
-
-let three=document.querySelector(".three");
-three.addEventListener("click",function(){
-    inputDisplay(3)
-});
-let four=document.querySelector(".four");
-four.addEventListener("click",function(){
-    inputDisplay(4)
-}); 
-
-let five=document.querySelector(".five");
-five.addEventListener("click",function(){
-    inputDisplay(5)
-}); 
-
-let six=document.querySelector(".six");
-six.addEventListener("click",function(){
-    inputDisplay(6)
-}); 
-
-let seven=document.querySelector(".seven");
-seven.addEventListener("click",function(){
-    inputDisplay(7)
-}); 
-
-let eight=document.querySelector(".eight");
-eight.addEventListener("click",function(){
-    inputDisplay(8)
-}); 
-
-let nine=document.querySelector(".nine");
-nine.addEventListener("click",function(){
-    inputDisplay(9)
-}); 
-
-let add=document.querySelector(".addition");
-add.addEventListener("click",function(){
-    inputDisplay("+")
-});
-
-let subtract=document.querySelector(".subtract");
-subtract.addEventListener("click",function(){
-    inputDisplay("-")
-});
-
-let multiply=document.querySelector(".multiply");
-multiply.addEventListener("click",function(){
-    inputDisplay("*")
-});
-
-let divide=document.querySelector(".division");
-divide.addEventListener("click",function(){
-    inputDisplay("/")
-});
+buttonOperations.forEach(button => {
+    button.addEventListener("click",() => {
+        console.log(button)
+        screenDisplay.textContent=button.innerHTML
+    })
+})
 
 let equalsTO=document.querySelector(".operate");
 equalsTO.addEventListener("click",function(){
     inputDisplay("=")
     //operate(a,b,operator)
-
-    console.log(input)
+    // console.log(input)
 });
 
-let clear = document.querySelector('.clear');
-clear.addEventListener("click",function() {
-    location.reload();
+buttonDelete.addEventListener("click",function(){
+    inputDisplay("=")
+    //operate(a,b,operator)
+    // console.log(input)
+});
+
+buttonAllClear.addEventListener("click",function() {
+    screenDisplay.textContent=location.reload();
+         console.log("no work")
+
 });
 
 
